@@ -26,6 +26,11 @@ class All extends Component {
             .catch(err => console.log(err));
     };
 
+    sortPeople() {
+        console.log("click")
+        let newArray = this.people.sort();
+        this.setState({ people: newArray });
+    }
 
     render() {
         return (
@@ -43,7 +48,7 @@ class All extends Component {
                                 <Input />
                             </div>
                             <div className="col-4">
-                                <Button />
+                                <Button name="Submit" />
                             </div>
                         </div>
                     </div>

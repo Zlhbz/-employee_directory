@@ -1,4 +1,6 @@
 import React from "react"
+import All from "./All"
+import Button from "./Button"
 
 function Header() {
     return (
@@ -11,14 +13,14 @@ function Header() {
 
             <div className="row">
                 <div className="col-2"></div>
-                <li className="nav-item col-2">
-                    <a className="nav-link sort" href="#">Sort1</a>
+                <li className="nav-item col-3">
+                    <Button name="SORT1" onclick={All.sortPeople} />
                 </li>
-                <li className="nav-item col-2">
-                    <a className="nav-link sort" href="#">Sort2</a>
+                <li className="nav-item col-3">
+                    <Button name="SORT2" />
                 </li>
-                <li className="nav-item col-2">
-                    <a className="nav-link sort" href="#">Sort3</a>
+                <li className="nav-item col-3">
+                    <Button name="SORT3" />
                 </li>
                 <div className="col-2"></div>
             </div>
