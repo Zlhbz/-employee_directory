@@ -2,11 +2,29 @@ import React, { Component } from "react"
 import Input from "./Input"
 import Button from "./Button"
 import Header from "./Header"
-// import Api from "../utils/Api"
+import Api from "../utils/Api"
 import ProfileList from "./ProfileList"
 
 
 class All extends Component {
+
+    state = {
+        people: [],
+    };
+
+    componentDidMount() {
+        this.searchPeople();
+    }
+
+    searchPeople = () => {
+        Api.search()
+            .then(res => {
+                // console.log(res.data.results)
+                this.setState({ people: res.data.results });
+                // console.log("this " + JSON.stringify(this.state.people))
+            })
+            .catch(err => console.log(err));
+    };
 
 
     render() {
@@ -33,7 +51,17 @@ class All extends Component {
                 </div>
 
                 <div>
-                    <ProfileList />
+                    {this.state.people.map(item => (
+                        <ProfileList
+                            image={item.picture.large}
+                            first_name={item.name.first}
+                            last_name={item.name.last}
+                            cell={item.cell}
+                            email={item.email}
+                            id={item.id.value}
+                            key={item.id.value}
+                        />
+                    ))}
                 </div>
             </div>
         )
