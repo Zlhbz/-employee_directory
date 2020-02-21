@@ -14,7 +14,7 @@ function Header() {
             <div className="row">
                 <div className="col-2"></div>
                 <li className="nav-item col-3">
-                    <Button name="SORT1" onclick={All.sortPeople} />
+                    <Button name="SORT1" onClick={All.sortPeople} />
                 </li>
                 <li className="nav-item col-3">
                     <Button name="SORT2" />

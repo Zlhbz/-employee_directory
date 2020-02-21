@@ -18,21 +18,9 @@ class Input extends Component {
         });
     };
 
-    handleFormSubmit = event => {
+    handleInputSearch = event => {
         event.preventDefault();
-        let people = All.state.people;
-        console.log(people)
-        let new_array = [];
 
-        for (var i = 0; i < people.length; i++) {
-            if (people[i].name.first === this.state.name) {
-                new_array.push(people[i]);
-            }
-            if (people[i].name.last === this.state.name) {
-                new_array.push(people[i]);
-            }
-        }
-        All.setState({ people: new_array })
     };
 
 
@@ -41,7 +29,7 @@ class Input extends Component {
         return (
             <div>
                 <div className="form-group input">
-                    <input type="text" className="form-control" id="exampleInput" placeholder="Search" onChange={this.handleFormSubmit}>
+                    <input type="text" className="form-control" id="exampleInput" placeholder="Search" onChange={this.handleInputSearch}>
                     </input>
                 </div>
             </div >)
